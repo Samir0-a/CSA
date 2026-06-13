@@ -315,40 +315,137 @@ height:100%;
 object-fit:cover;
 }
 
-/* ===========================
-DEVELOPER
-=========================== */
+/* ==========================
+   Developer Section
+========================== */
 
-.developer{
-background:#eef4ff;
-text-align:center;
+.developer {
+    background: #eef4ff;
+    padding: 80px 20px;
+    text-align: center;
 }
 
-.developer h2{
-font-size:30px;
-margin-bottom:20px;
+.developer h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 50px;
+    font-weight: 700;
 }
 
-.developer-card{
-display:flex;
-justify-content:center;
-align-items:center;
-gap:30px;
+/* Developer Card */
+
+.developer-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
-.developer-card img{
-width:130px;
-height:130px;
-border-radius:50%;
-object-fit:cover;
-border:5px solid #2563eb;
+.developer-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
 }
 
-.developer-card h3{
-font-size:28px;
-color:#2563eb;
+/* Developer Image */
+
+.developer-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #2563eb;
+    flex-shrink: 0;
 }
 
+/* Developer Details */
+
+/* ==========================
+   Developer Section
+========================== */
+
+.developer {
+    background: #eef4ff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.developer h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* Container for all cards */
+
+.developer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Individual Card */
+
+.developer-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.developer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+}
+
+.developer-card img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #2563eb;
+    margin-bottom: 20px;
+}
+
+.developer-card h3 {
+    font-size: 1.5rem;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.developer-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+    .developer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .developer-container {
+        grid-template-columns: 1fr;
+    }
+}
 /* ===========================
 FOOTER
 =========================== */
