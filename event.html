@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSA - Events</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="event.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+        <img src="csa logo.jpeg">
+        <div>
+            <h2>CSA</h2>
+            <span>Computer Science Association</span>
+        </div>
+    </div>
+    <ul class="nav-links">
+        <li><a href="CSA.html">Home</a></li>
+        <li><a href="board.html">CSA Board</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-buttons">
+        <button class="join-btn">Join CSA</button>
+        <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </div>
+</nav>
+
+<div class="header">
+    <h1>Events</h1>
+    <div class="b"><a href="CSA.html">Home</a> / Events</div>
+    <div class="event-tabs">
+        <button class="event-tab active" data-type="upcoming">Upcoming Events</button>
+        <button class="event-tab" data-type="past">Past Events</button>
+    </div>
+</div>
+
+<section class="container">
+    <div class="events-list">
+
+        <!-- Upcoming Events -->
+        <div class="event-card upcoming">
+            <div class="date-box"><span>JUN</span><h2>10</h2></div>
+            <div class="event-content">
+                <h3>Python Workshop</h3>
+                <p>10 June 2026 • 10:00 AM</p>
+                <p>MMC Dang</p>
+                <p>A hands-on workshop for beginners to learn Python programming.</p>
+                <a href="#">Register Now →</a>
+            </div>
+            <img src="event1.jpg" alt="Python Workshop">
+        </div>
+
+        <div class="event-card upcoming">
+            <div class="date-box"><span>JUN</span><h2>25</h2></div>
+            <div class="event-content">
+                <h3>Web Dev Bootcamp</h3>
+                <p>25 June 2026 • 01:00 PM</p>
+                <p>MMC Dang</p>
+                <p>Learn modern web development technologies.</p>
+                <a href="#">Register Now →</a>
+            </div>
+            <img src="event2.jpg" alt="Web Dev Bootcamp">
+        </div>
+
+        <div class="event-card upcoming">
+            <div class="date-box"><span>JUL</span><h2>05</h2></div>
+            <div class="event-content">
+                <h3>Tech Talk: AI & Future</h3>
+                <p>05 July 2026 • 11:00 AM</p>
+                <p>MMC Dang</p>
+                <p>Exploring the future of Artificial Intelligence.</p>
+                <a href="#">Register Now →</a>
+            </div>
+            <img src="event3.jpg" alt="Tech Talk AI">
+        </div>
+
+        <!-- Past Events -->
+        <div class="event-card past" style="display:none;">
+            <div class="date-box"><span>MAR</span><h2>15</h2></div>
+            <div class="event-content">
+                <h3>Hackathon 2025</h3>
+                <p>15 March 2025 • 09:00 AM</p>
+                <p>MMC Dang</p>
+                <p>24-hour coding marathon with amazing projects.</p>
+                <a href="#">View Details →</a>
+            </div>
+            <img src="event4.jpg" alt="Hackathon">
+        </div>
+
+        <div class="event-card past" style="display:none;">
+            <div class="date-box"><span>FEB</span><h2>20</h2></div>
+            <div class="event-content">
+                <h3>UI/UX Design Workshop</h3>
+                <p>20 February 2025 • 02:00 PM</p>
+                <p>MMC Dang</p>
+                <p>Learn design principles and Figma basics.</p>
+                <a href="#">View Details →</a>
+            </div>
+            <img src="event5.jpg" alt="UI/UX Workshop">
+        </div>
+
+        <div class="event-card past" style="display:none;">
+            <div class="date-box"><span>JAN</span><h2>10</h2></div>
+            <div class="event-content">
+                <h3>Orientation Program</h3>
+                <p>10 January 2025 • 10:00 AM</p>
+                <p>MMC Dang</p>
+                <p>Welcoming new members to CSA.</p>
+                <a href="#">View Details →</a>
+            </div>
+            <img src="event6.jpg" alt="Orientation">
+        </div>
+
+    </div>
+
+    <div class="sidebar">
+        <div class="subscribe-box">
+            <h3>Don't Miss Any Event!</h3>
+            <p>Subscribe to our newsletter and get updates about upcoming events.</p>
+            <input type="email" placeholder="Your email">
+            <button>Subscribe</button>
+        </div>
+    </div>
+</section>
+
+<script src="event.js"></script>
+</body>
+</html>
