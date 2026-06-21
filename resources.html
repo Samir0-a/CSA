@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources &amp; Blog — Computer Science Association</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="resources.css">
+</head>
+<body>
+
+<!-- ===========================
+NAVBAR
+=========================== -->
+<nav class="navbar">
+  <div class="logo">
+    <div class="logo-mark">◆</div>
+    <div>
+      <h2>CSA</h2>
+      <span>Computer Science Association</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="event.html">Events</a></li>
+    <li><a href="resources.html" class="active">Resources</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-buttons">
+    <button class="join-btn">Join CSA</button>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ===========================
+HEADER
+=========================== -->
+<header class="header">
+  <div class="header-inner">
+    <p class="breadcrumb"><a href="#">Home</a> / Resources &amp; Blog</p>
+    <h1>Resources &amp; Blog</h1>
+    <p class="header-sub">Coding tutorials, study materials, and IT tools — plus the latest tech news, student stories, and industry updates from the CSA community.</p>
+  </div>
+</header>
+
+<!-- ===========================
+SHARED SECTION SWITCH
+=========================== -->
+<div class="section-switch-wrap">
+  <div class="section-switch" role="tablist" aria-label="Page sections">
+    <button class="switch-btn active" data-target="resources" role="tab" aria-selected="true">
+      <i class="fas fa-book"></i> Resources
+    </button>
+    <button class="switch-btn" data-target="blog" role="tab" aria-selected="false">
+      <i class="fas fa-pen-nib"></i> Blog
+    </button>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- ===========================
+  RESOURCES SECTION
+  =========================== -->
+  <section id="resources" class="page-section active-section">
+
+    <div class="section-head">
+      <h2 class="section-title">Resources</h2>
+      <p class="section-desc">Hand-picked tutorials, study material, and tools to help you build, debug, and ship.</p>
+    </div>
+
+    <div class="filter-row" id="resource-filters">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="tutorial">Tutorials</button>
+      <button class="filter-chip" data-filter="study">Study Materials</button>
+      <button class="filter-chip" data-filter="tool">IT Tools</button>
+    </div>
+
+    <div class="resource-grid" id="resource-grid"></div>
+  </section>
+
+  <!-- ===========================
+  BLOG SECTION
+  =========================== -->
+  <section id="blog" class="page-section">
+
+    <div class="section-head">
+      <h2 class="section-title">Blog</h2>
+      <p class="section-desc">Tech news, student experiences, and industry updates — written by and for the CSA community.</p>
+    </div>
+
+    <div class="filter-row" id="blog-filters">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="news">Tech News</button>
+      <button class="filter-chip" data-filter="student">Student Experiences</button>
+      <button class="filter-chip" data-filter="industry">Industry Updates</button>
+    </div>
+
+    <div class="blog-layout">
+      <div class="blog-grid" id="blog-grid"></div>
+
+      <aside class="blog-sidebar">
+        <div class="sidebar-card">
+          <h3>Write for the blog</h3>
+          <p>Got a project story, internship recap, or a tip worth sharing? CSA members can submit posts for review.</p>
+          <button class="sidebar-btn">Submit a post</button>
+        </div>
+        <div class="sidebar-card">
+          <h3>Newsletter</h3>
+          <p>Monthly roundup of new resources and blog posts, straight to your inbox.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="you@student.edu" required aria-label="Email address">
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="form-note" id="newsletter-note"></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===========================
+POST MODAL
+=========================== -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modal-close" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<!-- ===========================
+FOOTER
+=========================== -->
+<footer class="footer">
+  <div class="footer-cols">
+    <div class="footer-col">
+      <div class="logo-small">◆ CSA</div>
+      <p class="footer-desc">Computer Science Association</p>
+      <div class="footer-contact-icons">
+        <a href="mailto:contact@csa.edu"><i class="fas fa-envelope"></i> contact@csa.edu</a>
+        <a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> +123 456 7890</a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> College Campus</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="https://iost.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt"></i> IOST</a>
+      <a href="https://fohss.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt"></i> FOHSS</a>
+      <a href="https://tuexam.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt"></i> TU Exam Department</a>
+      <a href="#">Events</a>
+      <a href="#">Projects</a>
+    </div>
+    <div class="footer-col">
+      <h4>Important</h4>
+      <a href="#">FAQ</a>
+      <a href="#">Privacy</a>
+      <a href="#">Help Desk</a>
+      <a href="#">Code of Conduct</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <div class="footer-socials">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; 2026 Computer Science Association (CSA). All rights reserved.</div>
+</footer>
+
+<script src="data.js"></script>
+<script src="resources.js"></script>
+</body>
+</html>
