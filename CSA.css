@@ -10,9 +10,13 @@ font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
+html{
+scroll-padding-top:90px;
+}
+
 body{
 background:#2b7dcf;
-color: #2b7dcf;
+color:#0b1736;
 overflow-x:hidden;
 }
 
@@ -49,6 +53,7 @@ align-items:center;
 padding:0 8%;
 background:#142558;
 z-index:1000;
+transition:.3s ease;
 }
 
 .logo{
@@ -82,8 +87,6 @@ font-weight:500;
 transition:.3s;
 }
 
-.nav-links a:hover
-
 .nav-buttons{
 display:flex;
 align-items:center;
@@ -113,6 +116,64 @@ height:40px;
 border:none;
 border-radius:50%;
 cursor:pointer;
+}
+
+.navbar.scrolled{
+height:68px;
+background:#0e1c45;
+box-shadow:0 6px 20px rgba(0,0,0,.25);
+}
+
+/* Hamburger (mobile menu button) */
+
+.hamburger{
+display:none;
+flex-direction:column;
+justify-content:space-between;
+width:28px;
+height:20px;
+background:transparent;
+border:none;
+cursor:pointer;
+z-index:1100;
+padding:0;
+}
+
+.hamburger span{
+display:block;
+width:100%;
+height:3px;
+border-radius:3px;
+background:white;
+transition:.3s;
+}
+
+.hamburger.active span:nth-child(1){
+transform:translateY(8.5px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+transform:translateY(-8.5px) rotate(-45deg);
+}
+
+.nav-overlay{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(3,7,18,.6);
+z-index:990;
+opacity:0;
+visibility:hidden;
+transition:.3s;
+}
+
+.nav-overlay.active{
+opacity:1;
+visibility:visible;
 }
 
 /* ===========================
@@ -307,6 +368,16 @@ opacity:0;
 visibility:hidden;
 transition:.4s;
 box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.preview-box.active{
+opacity:1;
+visibility:visible;
+}
+
+.event-item.active{
+background:#2c3e50;
+color:white;
 }
 
 .preview-box img{
@@ -544,15 +615,37 @@ object-fit:cover;
   font-size: 1rem;
   color: #4da3ff;
 }
+/* Tablet */
+@media (max-width: 900px) {
+    .footer-cols {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+    }
+}
+
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .footer-grid {
+@media (max-width: 600px) {
+    .footer-cols {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 35px;
     }
-    
-    .footer-section a {
-        padding-left: 0;
+
+    .footer-col h4 {
+        margin-bottom: 10px;
+    }
+
+    .footer-contact-icons,
+    .footer-col .footer-contact-icons a {
+        justify-content: center;
+    }
+
+    .footer-contact-icons {
+        align-items: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
     }
 }
 /* ===========================
@@ -595,6 +688,31 @@ color:white;
 
 .dark footer{
 background:#020617;
+}
+
+.dark .developer{
+background:#0b1326;
+}
+
+.dark .developer-card{
+background:#1e293b;
+}
+
+.dark .developer-card p{
+color:#b8c2d6;
+}
+
+.dark .events h2{
+color:white !important;
+}
+
+.dark .nav-links{
+background:#020617;
+}
+
+.dark #theme-toggle{
+background:#ffffff;
+color:#0f172a;
 }
 
 /* ===========================
@@ -667,13 +785,50 @@ flex-direction:column;
 gap:30px;
 }
 
+.hamburger{
+display:flex;
+}
+
+.nav-overlay{
+display:block;
+}
+
+.nav-links{
+position:fixed;
+top:0;
+right:0;
+height:100vh;
+width:min(78vw,320px);
+background:#0e1c45;
+flex-direction:column;
+align-items:flex-start;
+justify-content:flex-start;
+gap:0;
+padding:110px 35px 40px;
+transform:translateX(100%);
+transition:transform .35s ease;
+z-index:1050;
+box-shadow:-10px 0 30px rgba(0,0,0,.3);
+}
+
+.nav-links.active{
+transform:translateX(0);
+}
+
+.nav-links li{
+width:100%;
+}
+
+.nav-links a{
+display:block;
+padding:14px 0;
+font-size:17px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
 }
 
 @media(max-width:768px){
-
-.nav-links{
-display:none;
-}
 
 .hero-text h1{
 font-size:40px;
@@ -685,6 +840,73 @@ grid-template-columns:1fr;
 
 .developer-card{
 flex-direction:column;
+}
+
+.logo h2{
+font-size:20px;
+}
+
+.logo span{
+display:none;
+}
+
+.join-btn{
+padding:10px 16px;
+font-size:14px;
+}
+
+}
+
+@media(max-width:480px){
+
+.navbar{
+padding:0 5%;
+}
+
+.logo img{
+width:46px;
+}
+
+section{
+padding:60px 6%;
+}
+
+.hero-text h1{
+font-size:32px;
+}
+
+.hero-text p{
+font-size:16px;
+}
+
+.primary-btn,
+.secondary-btn{
+padding:12px 20px;
+font-size:14px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+.flag-area img,
+.hero-logo img{
+width:80%;
+margin:0 auto;
+}
+
+.developer-container{
+gap:20px;
+}
+
+.whatsapp-float{
+width:55px;
+height:55px;
+font-size:24px;
+bottom:80px;
+right:18px;
+}
+
+.footer-contact-icons a{
+justify-content:center;
 }
 
 }
