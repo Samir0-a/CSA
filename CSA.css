@@ -56,6 +56,11 @@ z-index:1000;
 transition:.3s ease;
 }
 
+.navbar > a {
+  display: flex;
+  align-items: center;
+}
+
 .logo{
 display:flex;
 align-items:center;
@@ -392,59 +397,7 @@ object-fit:cover;
 
 .developer {
     background: #eef4ff;
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.developer h2 {
-    font-size: 2rem;
-    color: #1e3a8a;
-    margin-bottom: 50px;
-    font-weight: 700;
-}
-
-/* Developer Card */
-
-.developer-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.developer-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
-}
-
-/* Developer Image */
-
-.developer-card img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #2563eb;
-    flex-shrink: 0;
-}
-
-/* Developer Details */
-
-/* ==========================
-   Developer Section
-========================== */
-
-.developer {
-    background: #eef4ff;
-    padding: 80px 20px;
+    padding: 80px 8%;
     text-align: center;
 }
 
@@ -488,12 +441,15 @@ object-fit:cover;
     border-radius: 50%;
     border: 5px solid #2563eb;
     margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .developer-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #2563eb;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .developer-card p {
@@ -502,19 +458,43 @@ object-fit:cover;
     font-size: 0.95rem;
 }
 
-/* Tablet */
+/* Tablet — 2 columns */
 
 @media (max-width: 992px) {
     .developer-container {
         grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
     }
 }
 
-/* Mobile */
+/* Mobile — 1 column */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+    .developer {
+        padding: 60px 6%;
+    }
+
+    .developer h2 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+
     .developer-container {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .developer-card {
+        padding: 24px 16px;
+    }
+
+    .developer-card img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .developer-card h3 {
+        font-size: 1.15rem;
     }
 }
 /* ===== FOOTER (STICKY, UPDATED) ===== */

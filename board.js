@@ -1,4 +1,57 @@
 // ===========================
+// MOBILE NAVIGATION (HAMBURGER)
+// ===========================
+
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger  = document.getElementById('hamburger');
+  const navLinks   = document.getElementById('navLinks');
+  const navOverlay = document.getElementById('navOverlay');
+
+  const openMenu = () => {
+    navLinks.classList.add('active');
+    navOverlay.classList.add('active');
+    hamburger.classList.add('active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    navLinks.classList.remove('active');
+    navOverlay.classList.remove('active');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  if (hamburger && navLinks && navOverlay) {
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.contains('active') ? closeMenu() : openMenu();
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    navOverlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 991) closeMenu();
+    });
+  }
+
+  // Sticky navbar shadow
+  const navbarEl = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (!navbarEl) return;
+    navbarEl.classList.toggle('scrolled', window.scrollY > 30);
+  });
+});
+
+// ===========================
 // THEME TOGGLE FUNCTIONALITY
 // ===========================
 
@@ -21,6 +74,7 @@ function initializeTheme() {
         enableLightMode();
     }
 }
+
 
 // Enable Dark Mode
 function enableDarkMode() {
@@ -207,25 +261,7 @@ window.addEventListener('scroll', () => {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-// ===========================
-// JOIN CSA BUTTON FUNCTIONALITY
-// ===========================
 
-const joinBtn = document.querySelector('.join-btn');
-
-if (joinBtn) {
-    joinBtn.addEventListener('click', function() {
-        // Show alert or open a modal/form
-        showNotification('Thank you for your interest! Redirecting to registration...', 'success');
-        
-        // Simulate redirect after delay
-        setTimeout(() => {
-            // Replace with actual registration page URL
-            console.log('Redirect to registration page');
-            // window.location.href = 'register.html';
-        }, 2000);
-    });
-}
 
 // ===========================
 // NOTIFICATION SYSTEM
