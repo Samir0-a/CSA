@@ -13,10 +13,12 @@
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-<link rel="stylesheet" href="board.css">
+<link rel="stylesheet" href="/CSA/Style/board.css">
+<link rel="stylesheet" href="/CSA/Style/footer.css">
 </head>
 <body>
-    <!-- Navigation -->
+   <!-- ================= NAVBAR ================= -->
+
 <header>
     <nav class="navbar">
 <a href="#"
@@ -24,7 +26,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
    style="text-decoration:none;">
 
   <div class="logo">
-    <img src="csa logo.jpeg" alt="CSA Logo">
+    <img src="/CSA/Media/csa logo.jpeg" alt="CSA Logo">
     <div>
       <h2>CSA</h2>
       <span>Computer Science Association</span>
@@ -66,8 +68,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </header>
 
 <div class="nav-overlay" id="navOverlay"></div>
-
-    <!-- Header -->
+ <!-- Header -->
     <div class="header">
         <h1 style="padding-top: 80px;">CSA Board</h1>
         <div class="breadcrumb">
@@ -88,13 +89,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 <!-- Member 1 -->
                 <div class="member-card">
                     <div class="member-image">
-                    <img src="csa logo.jpeg">    
+                    <img src="/CSA/Media/nirdesh.jpg">    
                     </div>
                     <div class="member-info">
-                        <h3 class="member-name">Rohit Choudhary</h3>
+                        <h3 class="member-name">Nirdesh Tiwari</h3>
                         <p class="member-position">President</p>
                         <div class="member-socials">
-                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/tiwari.nirdesh" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook"></i></a>
                             <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
@@ -213,56 +214,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             </div>
         </section>
     </div>
-
-    <!-- Achievements Section -->
-    <section class="achievements">
-        <div class="container">
-            <h2 class="achievements-title">Our Achievements</h2>
-            <div class="achievement-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="achievement-number">15+</div>
-                    <div class="achievement-label">Successful Events</div>
-                </div>
-
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-folder-open"></i>
-                    </div>
-                    <div class="achievement-number">25+</div>
-                    <div class="achievement-label">Completed Projects</div>
-                </div>
-
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <div class="achievement-number">500+</div>
-                    <div class="achievement-label">Active Members</div>
-                </div>
-
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="achievement-number">5+</div>
-                    <div class="achievement-label">National Competitions</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ========== FOOTER (UPDATED) ========== -->
+<!-- ========== FOOTER (UPDATED) ========== -->
   <footer class="footer">
     <div class="footer-cols">
       <div class="footer-col">
-        <div class="logo-small">◆ CSA</div>
+        <div class="logo-small">CSA</div>
         <p class="footer-desc">Computer Science Association</p>
         <div class="footer-contact-icons">
           <a href="mailto:contact@csa.edu"><i class="fas fa-envelope"></i> contact@csa.edu</a>
           <a href="tel:+1234567890"><i class="fas fa-phone-alt"></i> +123 456 7890</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Mahendra+Multiple+Campus+Dang" target="_blank" rel="noopener"><i class="fas fa-map-marker-alt"></i> College Campus</a>
+          <a href="#"><i class="fas fa-map-marker-alt"></i> College Campus</a>
         </div>
       </div>
       <div class="footer-col">
@@ -270,6 +231,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <a href="https://iost.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt" style="font-size:10px; margin-right:4px;"></i> IOST</a>
         <a href="https://fohss.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt" style="font-size:10px; margin-right:4px;"></i> FOHSS</a>
         <a href="https://tuexam.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt" style="font-size:10px; margin-right:4px;"></i> TU Exam Department</a>
+        <a href="#">Events</a>
+        <a href="#">Projects</a>
       </div>
       <div class="footer-col">
         <h4>Important</h4>
@@ -290,10 +253,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       </div>
     </div>
     <div class="footer-copy">
-      &copy; <span id="year">2026</span> Computer Science Association (CSA). All rights reserved.
+      &copy; 2026 Computer Science Association (CSA). All rights reserved.
     </div>
   </footer>
-
-    <script src="board.js"></script>
+    <script src="/CSA/JavaScript/board.js"></script>
+    <script src="/CSA/JavaScript/footer.js"></script>
 </body>
 </html>

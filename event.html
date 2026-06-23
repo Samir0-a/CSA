@@ -4,47 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
   <title>CSA · Events</title>
-  <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="event.css" />
+  <link rel="stylesheet" href="/CSA/Style/nav.css">
+  <link rel="stylesheet" href="/CSA/Style/event.css">
+  <link rel="stylesheet" href="/CSA/Style/footer.css">
 </head>
 <body>
-  <!-- ========== NAVBAR ========== -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="csa logo.jpeg">
-        <h2>CSA</h2>
-        <span>Computer Science Association</span>
-      </div>
-    </div>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="board.html">Board</a></li>
-      <li><a href="event.html" class="active">Events</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="nav-buttons">
-      <button class="menu-icon" id="menuToggle" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </nav>
 
-  <!-- ========== HEADER ========== -->
+  <!-- ================= NAVBAR ================= -->
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" style="text-decoration:none;">
+        <div class="logo">
+          <img src="/CSA/Media/csa logo.jpeg" alt="CSA Logo">
+          <div>
+            <h2>CSA</h2>
+            <span>Computer Science Association</span>
+          </div>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="board.html">CSA Board</a></li>
+        <li><a href="event.html" class="active">Events</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="nav-buttons">
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+  </header>
+
+  <!-- ================= PAGE HEADER ================= -->
   <div class="header">
-    <h1>Events</h1>
-    <div class="breadcrumb"><a href="#">Home</a> / Events</div>
+    <h1>CSA Events</h1>
     <div class="event-tabs">
-      <button class="event-tab active" data-type="upcoming">Upcoming</button>
-      <button class="event-tab" data-type="past">Past</button>
+      <button class="event-tab active" data-type="upcoming">Upcoming Events</button>
+      <button class="event-tab" data-type="past">Past Events</button>
     </div>
   </div>
 
-  <!-- ========== MAIN ========== -->
+  <!-- ================= MAIN CONTENT ================= -->
   <div class="container">
     <div class="events-list" id="eventsList">
       <!-- Rendered by JS -->
@@ -71,10 +85,9 @@
         <div class="cal-days" id="calDays"></div>
       </div>
     </div>
-<<<<<<< HEAD
   </div>
 
-  <!-- ========== EVENT DETAIL OVERLAY ========== -->
+  <!-- ================= EVENT DETAIL OVERLAY ================= -->
   <div class="event-detail-overlay" id="detailOverlay">
     <div class="event-detail-card">
       <div class="close-detail" id="closeDetail">&times;</div>
@@ -93,16 +106,16 @@
     </div>
   </div>
 
-  <!-- ========== WHATSAPP ========== -->
-  <a href="https://wa.me/9810953213" target="_blank" class="whatsapp-btn" aria-label="Chat">
+  <!-- ================= WHATSAPP ================= -->
+  <a href="https://wa.me/9810953213" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- ========== FOOTER (UPDATED) ========== -->
+  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="footer-cols">
       <div class="footer-col">
-        <div class="logo-small">◆ CSA</div>
+        <div class="logo-small">CSA</div>
         <p class="footer-desc">Computer Science Association</p>
         <div class="footer-contact-icons">
           <a href="mailto:contact@csa.edu"><i class="fas fa-envelope"></i> contact@csa.edu</a>
@@ -112,9 +125,9 @@
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
-        <a href="https://iost.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt" style="font-size:10px; margin-right:4px;"></i> IOST</a>
-        <a href="https://fohss.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt" style="font-size:10px; margin-right:4px;"></i> FOHSS</a>
-        <a href="https://tuexam.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt" style="font-size:10px; margin-right:4px;"></i> TU Exam Department</a>
+        <a href="https://iost.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt" style="font-size:10px;margin-right:4px;"></i> IOST</a>
+        <a href="https://fohss.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt" style="font-size:10px;margin-right:4px;"></i> FOHSS</a>
+        <a href="https://tuexam.tu.edu.np" target="_blank"><i class="fas fa-external-link-alt" style="font-size:10px;margin-right:4px;"></i> TU Exam Department</a>
         <a href="#">Events</a>
         <a href="#">Projects</a>
       </div>
@@ -127,7 +140,7 @@
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
-        <div class="footer-socials" style="border-top: none; padding-top: 0; margin-top: 0; justify-content: flex-start; gap: 10px;">
+        <div class="footer-socials" style="border-top:none;padding-top:0;margin-top:0;justify-content:flex-start;gap:10px;">
           <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
@@ -140,5 +153,11 @@
       &copy; 2026 Computer Science Association (CSA). All rights reserved.
     </div>
   </footer>
-  <script src="event.js"></script>
-  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script src="/CSA/JavaScript/nav.js"></script>
+  <script src="/CSA/JavaScript/event.js"></script>
+  <script src="/CSA/JavaScript/footer.js"></script>
+
+</body>
+</html>

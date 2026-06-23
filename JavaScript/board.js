@@ -170,7 +170,7 @@ function updateBoardContent(year) {
         },
         '2026 Board': {
             executives: [
-                { name: 'Arjun Verma', position: 'President' },
+                { name: 'Nirdesh Tiwari', position: 'President' },
                 { name: 'Sara Khan', position: 'Vice President' },
                 { name: 'Vikram Patel', position: 'Secretary' },
                 { name: 'Isha Gupta', position: 'Treasurer' }

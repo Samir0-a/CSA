@@ -7,36 +7,60 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="/CSA/Style/contact.css">
+    <link rel="stylesheet" href="/CSA/Style/footer.css">
+    <link rel="stylesheet" href="/CSA/Style/nav.css">
 </head>
 <body>
-    <!-- Navigation -->
+<!-- ================= NAVBAR ================= -->
+
+<header>
     <nav class="navbar">
-        <div class="logo">
-            <img src="csa logo.jpeg" alt="CSA Logo">
-            <div>
-                <h2>CSA</h2>
-                <span>Computer Science Association</span>
-            </div>
-        </div>
+<a href="#"
+   onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"
+   style="text-decoration:none;">
 
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="board.html">CSA Board</a></li>
-            <li><a href="event.html">Events</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+  <div class="logo">
+    <img src="/CSA/Media/csa logo.jpeg" alt="CSA Logo">
+    <div>
+      <h2>CSA</h2>
+      <span>Computer Science Association</span>
+    </div>
+  </div>
 
-        <div class="nav-buttons">
-            <button class="join-btn">Join CSA</button>
-            <button id="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </nav>
+</a>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="board.html">CSA Board</a></li>
+
+        <li><a href="event.html">Events</a></li>
+
+        <li><a href="projects.html">Projects</a></li>
+
+        <li><a href="resources.html">Resources</a></li>
+
+        <li><a href="gallery.html">Gallery</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+
+    <div class="nav-buttons">
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+</nav>
+</header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -135,7 +159,7 @@
   <footer class="footer">
     <div class="footer-cols">
       <div class="footer-col">
-        <div class="logo-small">◆ CSA</div>
+        <div class="logo-small">CSA</div>
         <p class="footer-desc">Computer Science Association</p>
         <div class="footer-contact-icons">
           <a href="mailto:contact@csa.edu"><i class="fas fa-envelope"></i> contact@csa.edu</a>
@@ -173,7 +197,9 @@
       &copy; 2026 Computer Science Association (CSA). All rights reserved.
     </div>
   </footer>
-    <!-- JavaScript -->
-    <script src="contact.js"></script>
+  <!-- JavaScript -->
+    <script src="/CSA/JavaScript/contact.js"></script>
+    <script src="/CSA/JavaScript/footer.js"></script>
+    <script src="/CSA/JavaScript/nav.js"></script>
 </body>
 </html>

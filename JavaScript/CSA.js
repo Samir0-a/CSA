@@ -83,33 +83,61 @@ document.addEventListener('DOMContentLoaded', () => {
   handleNavbarScroll();
   window.addEventListener('scroll', handleNavbarScroll);
 
-  /* -------------------------------------------------
-     4. Dark / light theme toggle (persisted)
-  ------------------------------------------------- */
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon   = themeToggle ? themeToggle.querySelector('i') : null;
+  // Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
 
-  const applyTheme = (isDark) => {
-    document.body.classList.toggle('dark', isDark);
-    if (themeIcon) {
-      themeIcon.classList.toggle('fa-moon', !isDark);
-      themeIcon.classList.toggle('fa-sun', isDark);
+// Initialize theme on page load
+function initializeTheme() {
+    if (currentTheme === 'dark') {
+        enableDarkMode();
+    } else {
+        enableLightMode();
     }
-  };
+}
 
-  // Load saved preference, falling back to the visitor's OS setting
-  const savedTheme = localStorage.getItem('csa-theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  applyTheme(savedTheme ? savedTheme === 'dark' : prefersDark);
+// Enable Dark Mode
+function enableDarkMode() {
+    htmlElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    
+    // Apply dark mode styles
+    body.style.background = '#0a0e27';
+    body.style.color = '#e0e0e0';
+    navbar.style.background = '#0f1626';
+    
+    document.documentElement.style.setProperty('--bg-primary', '#0a0e27');
+    document.documentElement.style.setProperty('--bg-secondary', '#1a2a4e');
+    document.documentElement.style.setProperty('--text-primary', '#e0e0e0');
+    document.documentElement.style.setProperty('--text-secondary', '#a0a0a0');
+}
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = !document.body.classList.contains('dark');
-      applyTheme(isDark);
-      localStorage.setItem('csa-theme', isDark ? 'dark' : 'light');
-    });
-  }
+// Enable Light Mode
+function enableLightMode() {
+    htmlElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    
+    // Apply light mode styles
+    body.style.background = '#f8f9fa';
+    body.style.color = '#333';
+    navbar.style.background = '#142558';
+    
+    document.documentElement.style.setProperty('--bg-primary', '#f8f9fa');
+    document.documentElement.style.setProperty('--bg-secondary', '#ffffff');
+    document.documentElement.style.setProperty('--text-primary', '#333');
+    document.documentElement.style.setProperty('--text-secondary', '#666');
+}
 
+// Theme toggle event listener
+themeToggle.addEventListener('click', () => {
+    const theme = htmlElement.getAttribute('data-theme');
+    if (theme === 'dark') {
+        enableLightMode();
+    } else {
+        enableDarkMode();
+    }
+});
   /* -------------------------------------------------
      5. Event preview (click an event to show its image)
   ------------------------------------------------- */

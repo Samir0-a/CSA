@@ -8,31 +8,60 @@
   <!-- Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="event-registration.css" />
+  <link rel="stylesheet" href="/CSA/Style/event-registration.css" />
+  <link rel="stylesheet" href="/CSA/Style/nav.css" />
+  <link rel="stylesheet" href="/CSA/Style/footer.css" />
 </head>
 <body>
-  <!-- ========== NAVBAR (MATCHING EVENT PAGE) ========== -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="csa logo.jpeg" alt="CSA Logo">
+  <!-- ================= NAVBAR ================= -->
+
+<header>
+    <nav class="navbar">
+<a href="#"
+   onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"
+   style="text-decoration:none;">
+
+  <div class="logo">
+    <img src="/CSA/Media/csa logo.jpeg" alt="CSA Logo">
+    <div>
       <h2>CSA</h2>
       <span>Computer Science Association</span>
     </div>
+  </div>
+
+</a>
+
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="board.html">Board</a></li>
-      <li><a href="event.html" class="active">Events</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="resources.html">Resources</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
+
+        <li><a href="index.html">Home</a></li>
+
+        <li><a href="board.html">CSA Board</a></li>
+
+        <li><a href="event.html">Events</a></li>
+
+        <li><a href="projects.html">Projects</a></li>
+
+        <li><a href="resources.html">Resources</a></li>
+
+        <li><a href="gallery.html">Gallery</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
     </ul>
+
     <div class="nav-buttons">
-      <button class="menu-icon" id="menuToggle" aria-label="Toggle menu">
-        <i class="fas fa-bars"></i>
-      </button>
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
-  </nav>
+
+</nav>
+</header>
 
   <!-- ========== REGISTRATION FORM ========== -->
   <div class="form-page">
@@ -207,11 +236,11 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- ========== FOOTER (MATCHING EVENT PAGE) ========== -->
+  <!-- ========== FOOTER (UPDATED) ========== -->
   <footer class="footer">
     <div class="footer-cols">
       <div class="footer-col">
-        <div class="logo-small">◆ CSA</div>
+        <div class="logo-small">CSA</div>
         <p class="footer-desc">Computer Science Association</p>
         <div class="footer-contact-icons">
           <a href="mailto:contact@csa.edu"><i class="fas fa-envelope"></i> contact@csa.edu</a>
@@ -249,7 +278,8 @@
       &copy; 2026 Computer Science Association (CSA). All rights reserved.
     </div>
   </footer>
-
-  <script src="event-registration.js"></script>
+  <script src="/CSA/JavaScript/event-registration.js"></script>
+  <script src="/CSA/JavaScript/nav.js"></script>
+  <script src="/CSA/JavaScript/footer.js"></script>
 </body>
 </html>
