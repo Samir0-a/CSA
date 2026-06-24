@@ -7,49 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks   = document.getElementById('navLinks');
   const navOverlay = document.getElementById('navOverlay');
 
-  const openMenu = () => {
-    navLinks.classList.add('active');
-    navOverlay.classList.add('active');
-    hamburger.classList.add('active');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeMenu = () => {
-    navLinks.classList.remove('active');
-    navOverlay.classList.remove('active');
-    hamburger.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
-
-  if (hamburger && navLinks && navOverlay) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.contains('active') ? closeMenu() : openMenu();
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    navOverlay.addEventListener('click', closeMenu);
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeMenu();
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 991) closeMenu();
-    });
-  }
-
-  // Sticky navbar shadow
-  const navbarEl = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (!navbarEl) return;
-    navbarEl.classList.toggle('scrolled', window.scrollY > 30);
-  });
-});
 
 // ===========================
 // THEME TOGGLE FUNCTIONALITY
@@ -74,51 +31,6 @@ function initializeTheme() {
         enableLightMode();
     }
 }
-
-
-// Enable Dark Mode
-function enableDarkMode() {
-    htmlElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    
-    // Apply dark mode styles
-    body.style.background = '#0a0e27';
-    body.style.color = '#e0e0e0';
-    navbar.style.background = '#0f1626';
-    
-    document.documentElement.style.setProperty('--bg-primary', '#0a0e27');
-    document.documentElement.style.setProperty('--bg-secondary', '#1a2a4e');
-    document.documentElement.style.setProperty('--text-primary', '#e0e0e0');
-    document.documentElement.style.setProperty('--text-secondary', '#a0a0a0');
-}
-
-// Enable Light Mode
-function enableLightMode() {
-    htmlElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    
-    // Apply light mode styles
-    body.style.background = '#f8f9fa';
-    body.style.color = '#333';
-    navbar.style.background = '#142558';
-    
-    document.documentElement.style.setProperty('--bg-primary', '#f8f9fa');
-    document.documentElement.style.setProperty('--bg-secondary', '#ffffff');
-    document.documentElement.style.setProperty('--text-primary', '#333');
-    document.documentElement.style.setProperty('--text-secondary', '#666');
-}
-
-// Theme toggle event listener
-themeToggle.addEventListener('click', () => {
-    const theme = htmlElement.getAttribute('data-theme');
-    if (theme === 'dark') {
-        enableLightMode();
-    } else {
-        enableDarkMode();
-    }
-});
 
 // ===========================
 // YEAR TAB SWITCHING
@@ -170,10 +82,24 @@ function updateBoardContent(year) {
         },
         '2026 Board': {
             executives: [
+                { name: 'Jagadish Oli', position: 'IPP' },
                 { name: 'Nirdesh Tiwari', position: 'President' },
-                { name: 'Sara Khan', position: 'Vice President' },
-                { name: 'Vikram Patel', position: 'Secretary' },
-                { name: 'Isha Gupta', position: 'Treasurer' }
+                { name: 'Suyog Adhikari', position: 'Executive Vice President' },
+                { name: 'Jivan Sharma', position: 'General Secretary' },
+                { name: 'Sandesh Khadka', position: 'Treasurer' },
+                { name: 'Ashma Malla', position: 'Training Director' },
+                { name: 'Niruta Acharya', position: 'Vice President' },
+                { name: 'Hari Saru Magar', position: 'Vice President' },
+                { name: 'Samyog Adhikari', position: 'Secretary' },
+                { name: 'Ganga Kunwor', position: 'H.R Coordinator' },
+                { name: 'Bhuwan Oli', position: 'Media Coordinator' },
+                { name: 'Alisha Acharya', position: 'Event Coordinator' },
+                { name: 'Saurav Puri', position: 'Project Coordinator' },
+                { name: 'Yashoda Poudel', position: 'Public Related Coordinator' },
+                { name: 'Santosh Adhikari', position: 'Sport Coordinator' },
+                { name: 'Preeti Chaudhary', position: 'Graphic Designer Coordinator' },
+                { name: 'Deena Budhathoki', position: 'Innovation & Strategy Coordinator' },
+                { name: 'Anmol Poudel', position: 'Technical Supporter Coordinator' },
             ]
         }
     };
@@ -262,49 +188,6 @@ window.addEventListener('scroll', () => {
 });
 
 
-
-// ===========================
-// NOTIFICATION SYSTEM
-// ===========================
-
-function showNotification(message, type = 'info') {
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.textContent = message;
-    
-    // Style the notification
-    Object.assign(notification.style, {
-        position: 'fixed',
-        top: '100px',
-        right: '20px',
-        padding: '15px 25px',
-        borderRadius: '8px',
-        color: 'white',
-        fontSize: '14px',
-        zIndex: '9999',
-        animation: 'slideIn 0.3s ease',
-        maxWidth: '300px'
-    });
-    
-    // Set background color based on type
-    if (type === 'success') {
-        notification.style.background = '#10b981';
-    } else if (type === 'error') {
-        notification.style.background = '#ef4444';
-    } else {
-        notification.style.background = '#3b82f6';
-    }
-    
-    document.body.appendChild(notification);
-    
-    // Remove notification after 3 seconds
-    setTimeout(() => {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => notification.remove(), 300);
-    }, 3000);
-}
-
 // ===========================
 // MEMBER CARD INTERACTIONS
 // ===========================
@@ -323,52 +206,6 @@ memberCards.forEach(card => {
     });
 });
 
-// ===========================
-// ACHIEVEMENT CARDS ANIMATION
-// ===========================
-
-const achievementCards = document.querySelectorAll('.achievement-card');
-
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            // Add staggered animation
-            setTimeout(() => {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }, index * 100);
-            
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-achievementCards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'all 0.6s ease';
-    observer.observe(card);
-});
-
-// ===========================
-// SOCIAL MEDIA LINK HANDLERS
-// ===========================
-
-const socialLinks = document.querySelectorAll('.member-socials a');
-
-socialLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const platform = this.getAttribute('title');
-        showNotification(`Opening ${platform} profile...`, 'info');
-        // Replace with actual social media URLs
-    });
-});
 
 // ===========================
 // KEYBOARD NAVIGATION
