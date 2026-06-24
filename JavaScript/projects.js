@@ -99,7 +99,7 @@
     });
   }
 
-  // ===== OPEN DETAIL OVERLAY (full project info) =====
+  // ===== OPEN DETAIL OVERLAY =====
   function openDetail(id) {
     const project = projects.find(p => p.id === id);
     if (!project) return;
@@ -110,15 +110,12 @@
     document.getElementById('detailStatus').textContent = project.status;
     document.getElementById('detailDesc').textContent = project.fullDesc || project.desc;
 
-    // Benefits
     const benefitsContainer = document.getElementById('detailBenefits');
     const benefitsHtml = project.benefits.map(b => `<span>${b}</span>`).join(' ');
     benefitsContainer.innerHTML = `<strong>✨ Key Outcomes</strong><br>${benefitsHtml}`;
 
-    // Outcome badge
     document.getElementById('detailOutcomeBadge').textContent = `🏆 ${project.outcome}`;
 
-    // Action button
     const actionBtn = document.getElementById('detailAction');
     actionBtn.textContent = '🔗 View Repository →';
     actionBtn.onclick = function() {
@@ -135,43 +132,12 @@
     document.body.style.overflow = '';
   }
 
-  closeBtn.addEventListener('click', closeDetail);
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) closeDetail();
-  });
-
-  // ===== MOBILE MENU (MATCHING EVENT PAGE) =====
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  menuToggle.addEventListener('click', function() {
-    navLinks.classList.toggle('open');
-    const icon = this.querySelector('i');
-    if (navLinks.classList.contains('open')) {
-      icon.className = 'fas fa-times';
-    } else {
-      icon.className = 'fas fa-bars';
-    }
-  });
-
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', function() {
-      if (window.innerWidth <= 768) {
-        navLinks.classList.remove('open');
-        menuToggle.querySelector('i').className = 'fas fa-bars';
-      }
+  if (closeBtn) closeBtn.addEventListener('click', closeDetail);
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeDetail();
     });
-  });
-
-  document.addEventListener('click', function(e) {
-    if (window.innerWidth <= 768) {
-      const navbar = document.querySelector('.navbar');
-      if (!navbar.contains(e.target) && navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
-        menuToggle.querySelector('i').className = 'fas fa-bars';
-      }
-    }
-  });
+  }
 
   // ===== INIT =====
   renderProjects();
