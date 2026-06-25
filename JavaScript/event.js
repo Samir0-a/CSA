@@ -2,13 +2,14 @@
 const events = [
     {
         id: 1,
-        title: 'Hackathon 2026',
+        title: 'Web Development Competition',
         date: '2026-06-15',
         time: '09:00 AM',
         venue: 'MMC Dang',
-        desc: '24-hour coding marathon. Build innovative solutions, compete with peers, and win exciting prizes.',
+        desc: 'CSA website ',
         benefits: ['Skill development', 'Networking', 'Recognition', 'Prizes'],
-        type: 'upcoming'
+        type: 'upcoming',
+        registrationUrl: 'https://forms.gle/YOUR_HACKATHON_FORM_LINK'  // ← Form link
     },
     {
         id: 2,
@@ -18,7 +19,8 @@ const events = [
         venue: 'MMC Dang',
         desc: 'Hands-on Python for beginners. Learn basics, functions, and mini-projects.',
         benefits: ['Skill development', 'Networking', 'Certificate'],
-        type: 'upcoming'
+        type: 'upcoming',
+        registrationUrl: 'https://forms.gle/YOUR_PYTHON_FORM_LINK'     // ← Form link
     },
     {
         id: 3,
@@ -28,7 +30,8 @@ const events = [
         venue: 'MMC Dang',
         desc: 'Modern web development: HTML, CSS, JavaScript, React basics.',
         benefits: ['Skill development', 'Project building', 'Recognition'],
-        type: 'upcoming'
+        type: 'upcoming',
+        registrationUrl: 'https://forms.gle/YOUR_WEBDEV_FORM_LINK'     // ← replace with your Google Form URL
     },
     {
         id: 4,
@@ -38,7 +41,8 @@ const events = [
         venue: 'MMC Dang',
         desc: 'Exploring AI trends, ethics, and career opportunities with industry experts.',
         benefits: ['Networking', 'Industry insights', 'Recognition'],
-        type: 'upcoming'
+        type: 'upcoming',
+        registrationUrl: 'https://forms.gle/YOUR_AI_FORM_LINK'         // ← replace with your Google Form URL
     },
     {
         id: 5,
@@ -48,37 +52,8 @@ const events = [
         venue: 'MMC Dang',
         desc: 'Deep dive into cloud architecture, AWS, Azure, and career paths in cloud.',
         benefits: ['Skill development', 'Networking', 'Industry insights'],
-        type: 'upcoming'
-    },
-    {
-        id: 6,
-        title: 'Hackathon 2025',
-        date: '2025-03-15',
-        time: '09:00 AM',
-        venue: 'MMC Dang',
-        desc: '24-hour coding marathon. 50+ teams participated. Winners received cash prizes.',
-        benefits: ['Skill development', 'Networking', 'Recognition', 'Prizes'],
-        type: 'past'
-    },
-    {
-        id: 7,
-        title: 'UI/UX Design Workshop',
-        date: '2025-02-20',
-        time: '02:00 PM',
-        venue: 'MMC Dang',
-        desc: 'Design thinking, Figma, prototyping, and user research techniques.',
-        benefits: ['Skill development', 'Portfolio building', 'Networking'],
-        type: 'past'
-    },
-    {
-        id: 8,
-        title: 'Orientation Program',
-        date: '2025-01-10',
-        time: '10:00 AM',
-        venue: 'MMC Dang',
-        desc: 'Welcome new CSA members. Introduction to committees and annual events.',
-        benefits: ['Networking', 'Community building', 'Recognition'],
-        type: 'past'
+        type: 'upcoming',
+        registrationUrl: 'https://forms.gle/YOUR_CLOUD_FORM_LINK'      // ← replace with your Google Form URL
     },
     {
         id: 9,
@@ -144,11 +119,18 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>`;
         }).join('');
 
-        // Attach click handlers to all "view detail" links
+        // Attach click handlers to all "view detail / register" links
         document.querySelectorAll('.view-detail').forEach(el => {
             el.addEventListener('click', function (e) {
                 e.stopPropagation();
-                openDetail(parseInt(this.dataset.id));
+                const id = parseInt(this.dataset.id);
+                const ev = events.find(e => e.id === id);
+                // Upcoming events with a Google Form → open it directly
+                if (ev && ev.type === 'upcoming' && ev.registrationUrl) {
+                    window.open(ev.registrationUrl, '_blank');
+                } else {
+                    openDetail(id);
+                }
             });
         });
     }
@@ -169,16 +151,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const registerBtn = document.getElementById('detailRegister');
         if (ev.type === 'upcoming') {
+            registerBtn.style.display = 'block';
             registerBtn.textContent = 'Register Now →';
             registerBtn.onclick = function () {
-                const params = new URLSearchParams({
-                    event: ev.title,
-                    date:  ev.date,
-                    time:  ev.time,
-                    venue: ev.venue,
-                    id:    ev.id
-                });
-                window.location.href = 'event-registration.html?' + params.toString();
+                if (ev.registrationUrl) {
+                    window.open(ev.registrationUrl, '_blank');
+                } else {
+                    // Fallback: redirect to local registration page with event details
+                    const params = new URLSearchParams({
+                        event: ev.title,
+                        date:  ev.date,
+                        time:  ev.time,
+                        venue: ev.venue,
+                        id:    ev.id
+                    });
+                    window.location.href = 'event-registration.html?' + params.toString();
+                }
             };
         } else {
             registerBtn.textContent = '📋 Past Event Summary';
