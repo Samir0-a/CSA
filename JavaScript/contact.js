@@ -305,17 +305,15 @@ function setupFormInteractions() {
  * Highlight active nav link based on current page
  */
 function highlightActiveNav() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-            link.classList.add('active');
-            link.style.color = '#4a9eff';
-        } else {
-            link.classList.remove('active');
-        }
-    });
+    const currentPath = window.location.pathname.split("/").pop();
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    const linkPath = link.getAttribute("href").split("/").pop();
+    if (linkPath && linkPath === currentPath) {
+      link.classList.add("active");
+    }
+  });
+
 }
 
 /**

@@ -539,11 +539,6 @@ style.textContent = `
         }
     }
     
-    .nav-links a.active {
-        color: #4da6ff;
-        border-bottom: 3px solid #4da6ff;
-        padding-bottom: 5px;
-    }
     
     /* Dark Mode Styles */
     [data-theme="dark"] body {
