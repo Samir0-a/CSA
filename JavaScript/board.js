@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks   = document.getElementById('navLinks');
   const navOverlay = document.getElementById('navOverlay');
 
-
+});
 // ===========================
 // THEME TOGGLE FUNCTIONALITY
 // ===========================
@@ -61,64 +61,318 @@ yearTabs.forEach(tab => {
     });
 });
 
-// Function to update board content based on selected year
 function updateBoardContent(year) {
     const memberNames = {
         '2024 Board': {
             executives: [
-                { name: 'Rahul Singh', position: 'President' },
-                { name: 'Priya Sharma', position: 'Vice President' },
-                { name: 'Aditya Kumar', position: 'Secretary' },
-                { name: 'Neha Patel', position: 'Treasurer' }
+                { name: 'Sagar Ramrudri', 
+                    position: 'President', 
+                    img: '/CSA/Media/2024 Board/Sagar Ramrudri.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Sagar Neupane', 
+                    position: 'Executive Vice President', 
+                    img: '/CSA/Media/2024 Board/Sagar Neupane.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Deepak Kunwar',
+                    position: 'General Secretary', 
+                    img: '/CSA/Media/2024 Board/Deepak Kunwar.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Sirish Dhakal', 
+                    position: 'Vice President', 
+                    img: '/CSA/Media/2024 Board/Sirish Dhakal.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Nirdesh Tiwari', 
+                    position: 'Vice President', 
+                    img: '/CSA/Media/2024 Board/Nirdesh Tiwari.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Bishal Chaudhary', 
+                    position: 'Treasurer', 
+                    img: '/CSA/Media/2024 Board/Bishal Chaudhary.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Sanjay KC', 
+                    position: 'Secretary', 
+                    img: '/CSA/Media/2024 Board/Sanjay KC.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Ayush Adhikari', 
+                    position: 'Project Coordinator', 
+                    img: '/CSA/Media/2024 Board/Ayush Adhikari.jpg',
+                    facebook:'' ,
+                    instagram:''},
+                    
+                { name: 'Harsita Pokhrel', 
+                    position: 'HR Coordinator', 
+                    img: '/CSA/Media/2024 Board/Harsita Pokhrel.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Jagadish Poudel', 
+                    position: 'Media Coordinator', 
+                    img: '/CSA/Media/2024 Board/Jagadish Poudel.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Jagadish Oli', 
+                    position: 'Public R. Coodinator', 
+                    img: '/CSA/Media/2024 Board/Jagadish Oli.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Nisha Maraseni', 
+                    position: 'Event Coordinator', 
+                    img: '/CSA/Media/2024 Board/Nisha Maraseni.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Sanjay Khadka', 
+                    position: 'Sport Coordinator', 
+                    img: '/CSA/Media/2024 Board/Sanjay Khadka.jpg',
+                    facebook:'' ,
+                    instagram:''}
             ]
         },
         '2025 Board': {
             executives: [
-                { name: 'Rohit Choudhary', position: 'President' },
-                { name: 'Anjali Thapa', position: 'Vice President' },
-                { name: 'Manoj Yadav', position: 'Secretary' },
-                { name: 'Sushmita GC', position: 'Treasurer' }
+                { name: 'Jagadish Oli', 
+                    position: 'President', 
+                    img: '/CSA/Media/2025 Board/Jagadish Oli.jpg',
+                    facebook:'' ,
+                    instagram:'' },
+
+                { name: 'Sanjay Khadka', 
+                    position: 'Executive Vice President', 
+                    img: '/CSA/Media/2025 Board/Sanjay Khadka.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Sanjay KC Karki', 
+                    position: 'General Secretary', 
+                    img: '/CSA/Media/2025 Board/Sanjay kc karki.jpg',
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Harshita Pokhrel', 
+                    position: 'Vice President', 
+                    img: '/CSA/Media/2025 Board/Harshita Pokhrel.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Prajwol Acharya', 
+                    position: 'Vice President', 
+                    img: '/CSA/Media/2025 Board/Prajwol Acharya.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Nirdesh Tiwari', 
+                    position: 'Treasurer', 
+                    img: '/CSA/Media/2025 Board/Nirdesh Tiwari.jpg',
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Kamal Bhattarai', 
+                    position: 'Training Director', 
+                    img: '/CSA/Media/2025 Board/Kamal Bhattarai.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Sneha Khadka', 
+                    position: 'Secretary', 
+                    img: '/CSA/Media/2025 Board/Sneha Khadka.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Hari Saru Magar', 
+                    position: 'HR Coordinator', 
+                    img: '/CSA/Media/2025 Board/Hari Saru Magar.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Alisha Acharya', 
+                    position: 'Media Coordinator', 
+                    img: '/CSA/Media/2025 Board/Alisha Acharya.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Muna Dahal', 
+                    position: 'Graphic Designer Coordinator', 
+                    img: '/CSA/Media/2025 Board/Muna Dahal.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Abhushan Chaudhary', 
+                    position: 'Project Coordinator', 
+                    img: '/CSA/Media/2025 Board/Abhushan Chaudhary.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Suyog Adhikari', 
+                    position: 'Public R. Coordinator', 
+                    img: '/CSA/Media/2025 Board/Suyog Adhikari.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Bipin Khanal', 
+                    position: 'Event Coordinator', 
+                    img: '/CSA/Media/2025 Board/Bipin Khanal.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Saurav Puri', 
+                    position: 'Sport Coordinator', 
+                    img: '/CSA/Media/2025 Board/Saurav Puri.jpg', 
+                    facebook:'' ,
+                    instagram:''}
             ]
         },
         '2026 Board': {
             executives: [
-                { name: 'Jagadish Oli', position: 'IPP' },
-                { name: 'Nirdesh Tiwari', position: 'President' },
-                { name: 'Suyog Adhikari', position: 'Executive Vice President' },
-                { name: 'Jivan Sharma', position: 'General Secretary' },
-                { name: 'Sandesh Khadka', position: 'Treasurer' },
-                { name: 'Ashma Malla', position: 'Training Director' },
-                { name: 'Niruta Acharya', position: 'Vice President' },
-                { name: 'Hari Saru Magar', position: 'Vice President' },
-                { name: 'Samyog Adhikari', position: 'Secretary' },
-                { name: 'Ganga Kunwor', position: 'H.R Coordinator' },
-                { name: 'Bhuwan Oli', position: 'Media Coordinator' },
-                { name: 'Alisha Acharya', position: 'Event Coordinator' },
-                { name: 'Saurav Puri', position: 'Project Coordinator' },
-                { name: 'Yashoda Poudel', position: 'Public Related Coordinator' },
-                { name: 'Santosh Adhikari', position: 'Sport Coordinator' },
-                { name: 'Preeti Chaudhary', position: 'Graphic Designer Coordinator' },
-                { name: 'Deena Budhathoki', position: 'Innovation & Strategy Coordinator' },
-                { name: 'Anmol Poudel', position: 'Technical Supporter Coordinator' },
+                { name: 'Jagadish Oli', 
+                    position: 'IPP', 
+                    img: '/CSA/Media/2026 Board/Jagadish Oli.jpg',
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Nirdesh Tiwari',
+                     position: 'President', 
+                     img: '/CSA/Media/2026 Board/nirdesh.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Suyog Adhikari',
+                     position: 'Executive Vice President', 
+                     img: '/CSA/Media/2026 Board/Suyog Adhikari.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Jivan Sharma', 
+                    position: 'General Secretary', 
+                    img: '/CSA/Media/2026 Board/Jivan Sharma.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Sandesh Khadka', 
+                    position: 'Treasurer', 
+                    img: '/CSA/Media/2026 Board/Sandesh Khadka.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Ashma Malla', 
+                    position: 'Training Director', 
+                    img: '/CSA/Media/2026 Board/Ashma Malla.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Niruta Acharya', 
+                    position: 'Vice President', 
+                    img: '/CSA/Media/2026 Board/Niruta Acharya.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Hari Saru Magar', 
+                    position: 'Vice President', 
+                    img: '/CSA/Media/2026 Board/Hari Saru Magar.jpg',
+                    facebook:'' ,
+                    instagram:'' },
+
+                { name: 'Samyog Adhikari', 
+                    position: 'Secretary', 
+                    img: '/CSA/Media/2026 Board/Samyog Adhikari.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Ganga Kunwor', 
+                    position: 'HR Coordinator', 
+                    img: '/CSA/Media/2026 Board/Ganga Kunwor.jpg',
+                    facebook:'' ,
+                    instagram:'' },
+
+                { name: 'Bhuwan Oli', 
+                    position: 'Media Coordinator', 
+                    img: '/CSA/Media/2026 Board/Bhuwan Oli.jpg',
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Alisha Acharya', 
+                    position: 'Event Coordinator', 
+                    img: '/CSA/Media/2026 Board/Alisha Acharya.jpg',
+                    facebook:'' ,
+                    instagram:'' },
+
+                { name: 'Saurav Puri', 
+                    position: 'Project Coordinator', 
+                    img: '/CSA/Media/2026 Board/Saurav Puri.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Yashoda Poudel', 
+                    position: 'Public R. Coordinator', 
+                    img: '/CSA/Media/2026 Board/Yashoda Poudel.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Santosh Poudel', 
+                    position: 'Sport Coordinator', 
+                    img: '/CSA/Media/2026 Board/Santosh Adhikari.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Preeti Chaudhary', 
+                    position: 'Graphic Designer Coordinator', 
+                    img: '/CSA/Media/2026 Board/Preeti Chaudhary.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Deena Budhathoki', 
+                    position: 'Innovation & Strategy Coordinator', 
+                    img: '/CSA/Media/2026 Board/Deena Budhathoki.jpg', 
+                    facebook:'' ,
+                    instagram:''},
+
+                { name: 'Anmol Poudel', 
+                    position: 'Technical Supporter Coordinator', 
+                    img: '/CSA/Media/2026 Board/Anmol Poudel.jpg', 
+                    facebook:'' ,
+                    instagram:''}
             ]
         }
     };
 
-    // Update member cards with new data
-    const memberCards = document.querySelectorAll('.member-card');
-    if (memberNames[year]) {
-        const executives = memberNames[year].executives;
-        
-        // Update executive members (first 4 cards)
-        memberCards.forEach((card, index) => {
-            if (index < executives.length) {
-                const nameElement = card.querySelector('.member-name');
-                const positionElement = card.querySelector('.member-position');
-                
-                if (nameElement && positionElement) {
-                    nameElement.textContent = executives[index].name;
-                    positionElement.textContent = executives[index].position;
-                }
+                const memberCards = document.querySelectorAll('.member-card');
+                if (memberNames[year]) {
+                const executives = memberNames[year].executives;
+
+                memberCards.forEach((card, index) => {
+                if (index < executives.length) {
+                const nameEl      = card.querySelector('.member-name');
+                const posEl       = card.querySelector('.member-position');
+                const imgEl       = card.querySelector('.member-image img');
+                const fbLink      = card.querySelector('.member-socials a[data-social="facebook"]');
+                const liLink      = card.querySelector('.member-socials a[data-social="linkedin"]');
+                const igLink      = card.querySelector('.member-socials a[data-social="instagram"]');
+
+                if (nameEl) nameEl.textContent = executives[index].name;
+                if (posEl)  posEl.textContent  = executives[index].position;
+                if (imgEl)  imgEl.src          = executives[index].img;
+
+                // Update social links
+                if (fbLink) fbLink.href = executives[index].facebook || '#';
+                if (liLink) liLink.href = executives[index].linkedin || '#';
+                if (igLink) igLink.href = executives[index].instagram || '#';
+                } else {
+                card.style.display = 'none';
             }
         });
     }
