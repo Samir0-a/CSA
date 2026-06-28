@@ -207,7 +207,7 @@ DARK MODE
 =========================== */
 
 [data-theme="dark"] body{
-background:#0a0e27;
+background:#0a0a0a;
 color:#e0e0e0;
 }
 
@@ -242,10 +242,6 @@ background:linear-gradient(135deg,#1a2a4e,#0f1626);
 
 [data-theme="dark"] .member-socials a{
 background:#0f1626;
-}
-
-[data-theme="dark"] .nav-links{
-background:#0e1c45;
 }
 
 /* ===== WHATSAPP BUTTON ===== */
