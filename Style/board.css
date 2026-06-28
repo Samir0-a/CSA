@@ -206,15 +206,6 @@ color:#b0c4de;
 DARK MODE
 =========================== */
 
-[data-theme="dark"] body{
-background:#0a0a0a;
-color:#e0e0e0;
-}
-
-[data-theme="dark"] .navbar{
-background:#0f1626;
-}
-
 [data-theme="dark"] .section{
 background:#1a2a4e;
 }
