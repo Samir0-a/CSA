@@ -547,7 +547,7 @@ style.textContent = `
     }
     
     [data-theme="dark"] .navbar {
-        background: #0f1626;
+        background: #0a0a0a;
     }
     
     [data-theme="dark"] .header {
@@ -575,9 +575,6 @@ style.textContent = `
         color: #e0e0e0;
     }
     
-    [data-theme="dark"] .achievements {
-        background: linear-gradient(135deg, #1a2a4e 0%, #2a3a5e 100%);
-    }
 `;
 document.head.appendChild(style);
 

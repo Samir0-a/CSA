@@ -468,10 +468,8 @@ ul { list-style: none; }
 /* ===== WHATSAPP BUTTON ===== */
 .whatsapp-btn {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: 56px;
-  height: 56px;
+  right: 24px; bottom: 24px;
+  width: 56px; height: 56px;
   background: #25D366;
   color: white;
   border-radius: 50%;
@@ -482,11 +480,12 @@ ul { list-style: none; }
   z-index: 999;
   transition: 0.3s;
   font-size: 30px;
+  text-decoration: none;
 }
-
 .whatsapp-btn:hover {
   transform: scale(1.1);
   background: #1ebc59;
+  box-shadow: 0 8px 28px rgba(37,211,102,0.45);
 }
 
 /* ===== DARK MODE ===== */

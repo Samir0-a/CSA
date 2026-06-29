@@ -37,132 +37,6 @@ section{
 padding:80px 8%;
 }
 
-/* ===========================
-NAVBAR
-=========================== */
-
-.navbar{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:80px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 8%;
-background:#142558;
-z-index:1000;
-transition:.3s ease;
-}
-
-.navbar > a {
-  display: flex;
-  align-items: center;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:20px;
-}
-
-.logo img{
-width:60px;
-}
-
-.logo h2{
-color:white;
-font-size:24px;
-}
-
-.logo span{
-color:#b7c4ff;
-font-size:12px;
-}
-
-.nav-links{
-display:flex;
-gap:30px;
-}
-
-.nav-links a{
-color:white;
-font-weight:500;
-transition:.3s;
-}
-
-.nav-buttons{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-#theme-toggle{
-width:40px;
-height:40px;
-border:none;
-border-radius:50%;
-cursor:pointer;
-}
-
-.navbar.scrolled{
-height:68px;
-background:#0e1c45;
-box-shadow:0 6px 20px rgba(0,0,0,.25);
-}
-
-/* Hamburger (mobile menu button) */
-
-.hamburger{
-display:none;
-flex-direction:column;
-justify-content:space-between;
-width:28px;
-height:20px;
-background:transparent;
-border:none;
-cursor:pointer;
-z-index:1100;
-padding:0;
-}
-
-.hamburger span{
-display:block;
-width:100%;
-height:3px;
-border-radius:3px;
-background:white;
-transition:.3s;
-}
-
-.hamburger.active span:nth-child(1){
-transform:translateY(8.5px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2){
-opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-transform:translateY(-8.5px) rotate(-45deg);
-}
-
-.nav-overlay{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(3,7,18,.6);
-z-index:990;
-opacity:0;
-visibility:hidden;
-transition:.3s;
-}
-
-.nav-overlay.active{
-opacity:1;
-visibility:visible;
-}
 
 /* ===========================
 HERO
@@ -222,13 +96,6 @@ line-height:1.8;
 margin-top:30px;
 }
 
-.primary-btn{
-background:#2563eb;
-color:white;
-padding:14px 28px;
-border-radius:10px;
-margin-right:10px;
-}
 
 .secondary-btn{
 border:2px solid white;
@@ -240,43 +107,6 @@ border-radius:10px;
 .hero-logo img{
 width:600px;
 animation:none;
-}
-
-/* ===========================
-STATS
-=========================== */
-
-.stats{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-margin-top:-50px;
-position:relative;
-z-index:5;
-}
-
-.stat-card{
-background:white;
-padding:30px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-transition:.4s;
-}
-
-.stat-card:hover{
-transform:translateY(-10px);
-}
-
-.stat-card i{
-font-size:35px;
-color:#2a64e0;
-margin-bottom:15px;
-}
-
-.stat-card h2{
-font-size:35px;
-margin-bottom:10px;
 }
 
 /* ===========================
@@ -342,7 +172,7 @@ transition:.3s;
 }
 
 .event-item:hover{
-background:#2c3e50;
+background:#0a0a0a;
 color:white;
 transform:translateX(10px);
 }
@@ -364,7 +194,7 @@ visibility:visible;
 }
 
 .event-item.active{
-background:#2c3e50;
+background:#0a0a0a;
 color:white;
 }
 

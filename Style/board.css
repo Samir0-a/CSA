@@ -141,68 +141,6 @@ transform:scale(1.1);
 }
 
 /* ===========================
-ACHIEVEMENTS
-=========================== */
-
-.achievements{
-background:linear-gradient(135deg,#0f1f3f 0%,#1a2f5f 100%);
-color:white;
-padding:3rem 8%;
-}
-
-.achievements-title{
-font-size:1.5rem;
-font-weight:600;
-margin-bottom:2rem;
-border-bottom:3px solid #4da6ff;
-padding-bottom:.5rem;
-display:inline-block;
-}
-
-.achievement-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:1.5rem;
-max-width:1200px;
-margin:0 auto;
-}
-
-.achievement-card{
-text-align:center;
-padding:2rem 1.5rem;
-background:rgba(255,255,255,.05);
-border-radius:10px;
-border:1px solid rgba(77,166,255,.2);
-transition:all .3s ease;
-}
-
-.achievement-card:hover{
-background:rgba(255,255,255,.1);
-border-color:rgba(77,166,255,.4);
-transform:translateY(-4px);
-}
-
-.achievement-icon{
-font-size:2.5rem;
-color:#4da6ff;
-margin-bottom:1rem;
-display:flex;
-justify-content:center;
-}
-
-.achievement-number{
-font-size:2rem;
-font-weight:700;
-color:#4da6ff;
-margin-bottom:.5rem;
-}
-
-.achievement-label{
-font-size:.9rem;
-color:#b0c4de;
-}
-
-/* ===========================
 DARK MODE
 =========================== */
 
