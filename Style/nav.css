@@ -38,7 +38,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   padding: 0 8%;
-  background: #142558;
+  background: #0a0a0a;
   z-index: 1000;
   transition: .3s ease;
 }
