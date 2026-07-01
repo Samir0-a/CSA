@@ -1,10 +1,104 @@
+/* ===========================
+   CSS VARIABLES — LIGHT MODE
+=========================== */
 
-/* ===== PROJECTS GRID ===== */
+:root {
+  /* Backgrounds */
+  --bg-body:              #2b7dcf;
+  --bg-card:              #ffffff;
+  --bg-card-border:       #eaeef5;
+  --bg-tag:               #eef4ff;
+  --bg-outcome-badge:     #e6f7e6;
+  --bg-detail-card:       #ffffff;
+  --bg-detail-meta:       #f0f4fc;
+  --bg-detail-benefits:   #f3f7fe;
+  --bg-benefit-pill:      #ffffff;
+  --bg-mobile-nav:        #0e1c45;
+
+  /* Text */
+  --text-body:            #0b1736;
+  --text-card-title:      #0b1a3a;
+  --text-card-desc:       #5a5f6b;
+  --text-tag:             #2f80ed;
+  --text-outcome:         #0f6b3a;
+  --text-detail-heading:  #0b1a3a;
+  --text-detail-meta:     #3d4a62;
+  --text-detail-desc:     #1e2a3e;
+  --text-detail-close:    #2d3a5a;
+  --text-benefit-pill:    #1d3d7a;
+
+  /* Accents */
+  --accent-blue:          #2f80ed;
+  --accent-blue-dark:     #0d6efd;
+  --accent-blue-hover:    #0b5ed7;
+
+  /* Shadows */
+  --shadow-card:          rgba(0, 0, 0, 0.02);
+  --shadow-card-hover:    rgba(0, 0, 0, 0.07);
+  --shadow-detail:        rgba(0, 0, 0, 0.3);
+  --shadow-pill:          rgba(0, 0, 0, 0.04);
+
+  /* Borders */
+  --border-nav-link:      rgba(255, 255, 255, 0.08);
+
+  /* Transition */
+  --theme-transition: background 0.3s ease, color 0.3s ease,
+                      border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===========================
+   CSS VARIABLES — DARK MODE
+=========================== */
+
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-body:              #0b1121;
+  --bg-card:              #1a2540;
+  --bg-card-border:       #2a3a5e;
+  --bg-tag:               #0f1e3a;
+  --bg-outcome-badge:     #0a2e1a;
+  --bg-detail-card:       #1a2540;
+  --bg-detail-meta:       #0f1829;
+  --bg-detail-benefits:   #0f1829;
+  --bg-benefit-pill:      #1a2540;
+  --bg-mobile-nav:        #080f20;
+
+  /* Text */
+  --text-body:            #e2e8f0;
+  --text-card-title:      #e2e8f0;
+  --text-card-desc:       #94a3b8;
+  --text-tag:             #60a5fa;
+  --text-outcome:         #4ade80;
+  --text-detail-heading:  #e2e8f0;
+  --text-detail-meta:     #94a3b8;
+  --text-detail-desc:     #cbd5e1;
+  --text-detail-close:    #94a3b8;
+  --text-benefit-pill:    #93c5fd;
+
+  /* Accents */
+  --accent-blue:          #38bdf8;
+  --accent-blue-dark:     #0ea5e9;
+  --accent-blue-hover:    #0284c7;
+
+  /* Shadows */
+  --shadow-card:          rgba(0, 0, 0, 0.2);
+  --shadow-card-hover:    rgba(0, 0, 0, 0.4);
+  --shadow-detail:        rgba(0, 0, 0, 0.6);
+  --shadow-pill:          rgba(0, 0, 0, 0.2);
+
+  /* Borders */
+  --border-nav-link:      rgba(255, 255, 255, 0.06);
+}
+
+/* ===========================
+   PROJECTS GRID
+=========================== */
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  padding: 100px 5% 40px; /* ← was 40px top, now 100px to clear the fixed navbar */
+  padding: 100px 5% 40px;
   max-width: 1300px;
   margin: 0 auto;
   width: 100%;
@@ -12,23 +106,24 @@
 }
 
 .project-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 16px;
   display: flex;
   overflow: hidden;
-  border: 1px solid #eaeef5;
-  transition: transform 0.2s ease, box-shadow 0.25s, border-color 0.2s;
+  border: 1px solid var(--bg-card-border);
+  transition: transform 0.2s ease, box-shadow 0.25s ease,
+  border-color 0.2s ease, background 0.3s ease;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 10px var(--shadow-card);
   min-height: 130px;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.07);
-  border-color: #2f80ed;
+  box-shadow: 0 16px 32px var(--shadow-card-hover);
+  border-color: var(--accent-blue);
 }
 
 .project-accent {
@@ -38,7 +133,7 @@
 }
 
 .accent-light { background: #4a8af4; }
-.accent-dark { background: #0d6efd; }
+.accent-dark  { background: #0d6efd; }
 
 .project-info {
   padding: 18px 18px 16px;
@@ -52,15 +147,21 @@
   font-size: 1.1rem;
   margin: 0 0 4px;
   font-weight: 600;
-  color: #0b1a3a;
+  color: var(--text-card-title);
+  transition: color 0.3s ease;
 }
 
 .project-info p {
   font-size: 0.9rem;
-  color: #5a5f6b;
+  color: var(--text-card-desc);
   margin: 0 0 8px;
   line-height: 1.4;
+  transition: color 0.3s ease;
 }
+
+/* ===========================
+   TAGS & BADGES
+=========================== */
 
 .tags {
   display: flex;
@@ -71,37 +172,39 @@
 
 .tag {
   font-size: 0.7rem;
-  color: #2f80ed;
+  color: var(--text-tag);
   font-weight: 600;
-  background: #eef4ff;
+  background: var(--bg-tag);
   padding: 2px 12px;
   border-radius: 30px;
   letter-spacing: 0.2px;
   text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .outcome-badge {
   margin-top: 6px;
   font-size: 0.7rem;
-  background: #e6f7e6;
-  color: #0f6b3a;
+  background: var(--bg-outcome-badge);
+  color: var(--text-outcome);
   padding: 2px 14px;
   border-radius: 30px;
   display: inline-block;
   font-weight: 600;
   align-self: flex-start;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .view-details-link {
   margin-top: 8px;
   font-size: 0.85rem;
-  color: #2f80ed;
+  color: var(--accent-blue);
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: 0.2s;
+  transition: color 0.2s ease;
   cursor: pointer;
   background: none;
   border: none;
@@ -117,7 +220,10 @@
   transform: translateX(4px);
 }
 
-/* ===== DETAIL OVERLAY ===== */
+/* ===========================
+   DETAIL OVERLAY
+=========================== */
+
 .detail-overlay {
   position: fixed;
   top: 0;
@@ -142,15 +248,15 @@
 }
 
 .detail-card {
-  background: white;
+  background: var(--bg-detail-card);
   max-width: 720px;
   width: 100%;
   border-radius: 28px;
   padding: 32px 36px;
   position: relative;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px var(--shadow-detail);
   transform: scale(0.96);
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, background 0.3s ease;
   max-height: 90vh;
   overflow-y: auto;
 }
@@ -166,21 +272,22 @@
   font-size: 1.8rem;
   background: none;
   border: none;
-  color: #2d3a5a;
+  color: var(--text-detail-close);
   cursor: pointer;
-  transition: 0.2s;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .detail-close:hover {
-  color: #0d1b3a;
+  color: var(--text-card-title);
   transform: rotate(90deg);
 }
 
 .detail-card h2 {
   font-size: 1.8rem;
-  color: #0b1a3a;
+  color: var(--text-detail-heading);
   margin-bottom: 8px;
   padding-right: 30px;
+  transition: color 0.3s ease;
 }
 
 .detail-meta {
@@ -188,54 +295,59 @@
   flex-wrap: wrap;
   gap: 14px 20px;
   font-size: 0.95rem;
-  color: #3d4a62;
+  color: var(--text-detail-meta);
   margin: 8px 0 16px;
-  background: #f0f4fc;
+  background: var(--bg-detail-meta);
   padding: 12px 16px;
   border-radius: 14px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .detail-meta i {
   width: 20px;
-  color: #2f80ed;
+  color: var(--accent-blue);
 }
 
 .detail-desc {
   font-size: 1rem;
   line-height: 1.6;
-  color: #1e2a3e;
+  color: var(--text-detail-desc);
   margin: 12px 0 20px;
+  transition: color 0.3s ease;
 }
 
 .detail-benefits {
-  background: #f3f7fe;
+  background: var(--bg-detail-benefits);
   padding: 14px 18px;
   border-radius: 16px;
   margin: 12px 0 22px;
+  transition: background 0.3s ease;
 }
 
 .detail-benefits strong {
   display: block;
   font-size: 0.9rem;
-  color: #0b1a3a;
+  color: var(--text-card-title);
   margin-bottom: 6px;
+  transition: color 0.3s ease;
 }
 
 .detail-benefits span {
   display: inline-block;
-  background: white;
+  background: var(--bg-benefit-pill);
   padding: 4px 14px;
   border-radius: 30px;
   font-size: 0.8rem;
   font-weight: 500;
-  color: #1d3d7a;
+  color: var(--text-benefit-pill);
   margin: 3px 6px 3px 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 4px var(--shadow-pill);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .detail-action {
   display: inline-block;
-  background: #0d6efd;
+  background: var(--accent-blue-dark);
   color: white;
   border: none;
   padding: 12px 28px;
@@ -243,44 +355,245 @@
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: 0.2s;
+  transition: background 0.2s ease, transform 0.2s ease;
   margin-top: 8px;
 }
 
 .detail-action:hover {
-  background: #0b5ed7;
+  background: var(--accent-blue-hover);
   transform: scale(1.02);
 }
 
 .detail-outcome {
   margin-top: 10px;
   font-size: 0.9rem;
-  color: #0f6b3a;
-  background: #e6f7e6;
+  color: var(--text-outcome);
+  background: var(--bg-outcome-badge);
   padding: 6px 16px;
   border-radius: 30px;
   display: inline-block;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* ===== WHATSAPP BUTTON ===== */
+/* ===========================
+   WHATSAPP BUTTON
+=========================== */
+
 .whatsapp-btn {
   position: fixed;
-  right: 24px; bottom: 24px;
-  width: 56px; height: 56px;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
   background: #25D366;
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(37,211,102,0.35);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
   z-index: 999;
   transition: 0.3s;
   font-size: 30px;
   text-decoration: none;
 }
+
 .whatsapp-btn:hover {
   transform: scale(1.1);
   background: #1ebc59;
-  box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+}
+
+/* ===========================
+   RESPONSIVE — TABLET (≤991px)
+=========================== */
+
+@media (max-width: 991px) {
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 90px 4% 32px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-overlay {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(78vw, 300px);
+    background: var(--bg-mobile-nav);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 100px 30px 40px;
+    transform: translateX(100%);
+    transition: transform 0.35s ease, background 0.3s ease;
+    z-index: 1050;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 0;
+    font-size: 16px;
+    border-bottom: 1px solid var(--border-nav-link);
+  }
+
+  .detail-card {
+    padding: 28px 28px;
+    border-radius: 20px;
+  }
+
+  .detail-card h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE (≤768px)
+=========================== */
+
+@media (max-width: 768px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 80px 4% 28px;
+  }
+
+  .project-card {
+    min-height: 110px;
+  }
+
+  .project-info h3 {
+    font-size: 1rem;
+  }
+
+  .project-info p {
+    font-size: 0.85rem;
+  }
+
+  .detail-card {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .detail-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .detail-meta {
+    font-size: 0.85rem;
+    gap: 10px 14px;
+    padding: 10px 12px;
+  }
+
+  .detail-desc {
+    font-size: 0.9rem;
+  }
+
+  .detail-action {
+    padding: 10px 22px;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — SMALL (≤480px)
+=========================== */
+
+@media (max-width: 480px) {
+
+  .projects-grid {
+    padding: 76px 4% 24px;
+    gap: 14px;
+  }
+
+  .project-accent {
+    width: 7px;
+    min-width: 7px;
+  }
+
+  .project-info {
+    padding: 14px 14px 12px;
+  }
+
+  .project-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    padding: 2px 10px;
+  }
+
+  .view-details-link {
+    font-size: 0.8rem;
+  }
+
+  .detail-overlay {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .detail-card {
+    padding: 20px 16px;
+    border-radius: 16px 16px 0 0;
+    max-height: 85vh;
+  }
+
+  .detail-card h2 {
+    font-size: 1.15rem;
+  }
+
+  .detail-meta {
+    font-size: 0.8rem;
+    gap: 8px 10px;
+  }
+
+  .detail-benefits span {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+  }
+
+  .detail-action {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .logo h2 {
+    font-size: 18px;
+  }
+
+  .logo span {
+    display: none;
+  }
+
+  .whatsapp-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    right: 16px;
+    bottom: 16px;
+  }
 }

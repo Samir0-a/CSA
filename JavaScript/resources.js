@@ -1,8 +1,9 @@
 // ===========================
 // SECTION SWITCH (Resources / Blog)
 // ===========================
-const switchBtns = document.querySelectorAll('.switch-btn');
-const pageSections = document.querySelectorAll('.page-section');
+
+const switchBtns    = document.querySelectorAll('.switch-btn');
+const pageSections  = document.querySelectorAll('.page-section');
 
 switchBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -20,25 +21,20 @@ switchBtns.forEach(btn => {
 });
 
 // ===========================
-// MOBILE NAV TOGGLE
-// ===========================
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-if (menuToggle) {
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-}
-
-// ===========================
 // RESOURCE CARD RENDERING
 // ===========================
-const resourceGrid = document.getElementById('resource-grid');
+
+const resourceGrid    = document.getElementById('resource-grid');
 const resourceFilters = document.getElementById('resource-filters');
 
+function labelFor(type) {
+  return { tutorial: 'Tutorial', study: 'Study Material', tool: 'IT Tool' }[type] || type;
+}
+
 function renderResources(filter = 'all') {
-  const list = filter === 'all' ? resources : resources.filter(r => r.type === filter);
+  const list = filter === 'all'
+    ? resources
+    : resources.filter(r => r.type === filter);
 
   resourceGrid.innerHTML = list.map(r => `
     <div class="resource-card">
@@ -56,11 +52,7 @@ function renderResources(filter = 'all') {
   `).join('');
 }
 
-function labelFor(type) {
-  return { tutorial: 'Tutorial', study: 'Study Material', tool: 'IT Tool' }[type] || type;
-}
-
-resourceFilters.addEventListener('click', (e) => {
+resourceFilters.addEventListener('click', e => {
   const chip = e.target.closest('.filter-chip');
   if (!chip) return;
 
@@ -72,17 +64,24 @@ resourceFilters.addEventListener('click', (e) => {
 // ===========================
 // BLOG CARD RENDERING
 // ===========================
-const blogGrid = document.getElementById('blog-grid');
+
+const blogGrid    = document.getElementById('blog-grid');
 const blogFilters = document.getElementById('blog-filters');
 
 function categoryLabel(cat) {
-  return { news: 'Tech News', student: 'Student Experience', industry: 'Industry Update' }[cat] || cat;
+  return {
+    news:     'Tech News',
+    student:  'Student Experience',
+    industry: 'Industry Update'
+  }[cat] || cat;
 }
 
 function renderPosts(filter = 'all') {
-  const list = filter === 'all' ? posts : posts.filter(p => p.category === filter);
+  const list = filter === 'all'
+    ? posts
+    : posts.filter(p => p.category === filter);
 
-  blogGrid.innerHTML = list.map((p, i) => `
+  blogGrid.innerHTML = list.map(p => `
     <article class="blog-card" data-index="${posts.indexOf(p)}">
       <div class="blog-date">
         <span class="day">${p.day}</span>
@@ -102,7 +101,7 @@ function renderPosts(filter = 'all') {
   `).join('');
 }
 
-blogFilters.addEventListener('click', (e) => {
+blogFilters.addEventListener('click', e => {
   const chip = e.target.closest('.filter-chip');
   if (!chip) return;
 
@@ -114,11 +113,12 @@ blogFilters.addEventListener('click', (e) => {
 // ===========================
 // BLOG POST MODAL
 // ===========================
-const modalOverlay = document.getElementById('modal-overlay');
-const modalBody = document.getElementById('modal-body');
-const modalClose = document.getElementById('modal-close');
 
-blogGrid.addEventListener('click', (e) => {
+const modalOverlay = document.getElementById('modal-overlay');
+const modalBody    = document.getElementById('modal-body');
+const modalClose   = document.getElementById('modal-close');
+
+blogGrid.addEventListener('click', e => {
   const card = e.target.closest('.blog-card');
   if (!card) return;
 
@@ -137,20 +137,23 @@ blogGrid.addEventListener('click', (e) => {
 });
 
 modalClose.addEventListener('click', () => modalOverlay.classList.remove('open'));
-modalOverlay.addEventListener('click', (e) => {
+
+modalOverlay.addEventListener('click', e => {
   if (e.target === modalOverlay) modalOverlay.classList.remove('open');
 });
-document.addEventListener('keydown', (e) => {
+
+document.addEventListener('keydown', e => {
   if (e.key === 'Escape') modalOverlay.classList.remove('open');
 });
 
 // ===========================
 // NEWSLETTER FORM
 // ===========================
+
 const newsletterForm = document.getElementById('newsletter-form');
 const newsletterNote = document.getElementById('newsletter-note');
 
-newsletterForm.addEventListener('submit', (e) => {
+newsletterForm.addEventListener('submit', e => {
   e.preventDefault();
   const email = newsletterForm.querySelector('input').value;
   newsletterNote.textContent = `Subscribed — we'll email ${email} when there's something new.`;
@@ -160,5 +163,6 @@ newsletterForm.addEventListener('submit', (e) => {
 // ===========================
 // INITIAL RENDER
 // ===========================
+
 renderResources();
 renderPosts();
